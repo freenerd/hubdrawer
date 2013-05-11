@@ -1,0 +1,29 @@
+{
+  "name": "gitHubDrawer",
+  "version": "0.0.1",
+  "description": "drawer for GitHub",
+  "homepage_url": "https://github.com/freenerd/hubdrawer",
+  "background": { "scripts": ["background.js"] },
+  "content_scripts" : [
+    {
+      "matches" : [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js" : ["3rdParty/jQuery/jquery.min.js", "contentscript.js"],
+      "run_at" : "document_idle",
+      "all_frames" : false
+    }
+  ],
+  "permissions": [
+    "storage", 
+    "unlimitedStorage", 
+    "tabs",
+    "contextMenus",
+    "https://raw.github.com/"],
+  "icons" : {
+    "48" : "Assets/icon-48.png",
+    "128" : "Assets/icon-128.png"
+  },
+  "manifest_version": 2
+}
